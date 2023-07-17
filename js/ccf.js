@@ -16,20 +16,48 @@ ccf.getRankInfo = function (refine, type) {
         rank = ccf.rankUrl[refine];
         url = refine;
     } else if (type == 'abbr') {
+        // console.log(refine);
         let full = ccf.abbrFull[refine];
+        // console.log(full);
         url = ccf.fullUrl[full];
         if (full === undefined) {
             refine = refine.substring(0, refine.length - 1);
+            // console.log(refine.toUpperCase());
             var res = Object.keys(ccf.fullUrl).filter(function (k) {
                 return k.indexOf(refine.toUpperCase()) == 0;
             });
+            // console.log(res);
             url = res ? ccf.fullUrl[res] : false;
+            // console.log(url);
         }
         rank = ccf.rankUrl[url];
     } else if (type == 'meeting') {
         let full = ccf.abbrFull[refine];
         url = ccf.fullUrl[full];
         rank = ccf.rankUrl[url];
+    } else if(type == 'blur') {
+        // console.log(refine);
+        // blur search only for google scholar
+        let findArr = [];
+        // console.log(refine);
+        Object.keys(ccf.fullUrl).filter(function (k) {
+            // console.log(k);
+            // console.log(refine);
+            let res = k.indexOf(refine.toUpperCase());
+            // console.log(res);
+            if(res >= 0) {
+                // console.log(ccf.fullUrl[k]);
+                findArr.push(ccf.fullUrl[k]);
+            }
+        });
+        // console.log(findArr);
+        url = findArr[0];
+        if (findArr.length == 0 || findArr.length > 1) {
+            rank = undefined;
+        } else {
+            rank = ccf.rankUrl[url];
+        }
+        // console.log(rank);
     } else {
         url = ccf.fullUrl[refine];
         rank = ccf.rankUrl[url];

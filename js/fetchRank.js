@@ -13,6 +13,7 @@ function fetchRank(node, title, authorA, year, site) {
         if (xhr.readyState == 4) {
             var dblp_url = "";
             var resp = JSON.parse(xhr.responseText).result.hits;
+            // console.log(resp)
             if (resp["@total"] == 0) {
                 dblp_url == "";
                 resp_flag = false;   
