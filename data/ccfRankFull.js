@@ -111,7 +111,7 @@
     "/journals/tnsm/tnsm": "IEEE Transactions on Network and Service Management",
     "/journals/iet-com/iet-com": "IET Communications",
     "/journals/jnca/jnca": "Journal of Network and Computer Applications",
-    "/journals/monet/monet": "Mobile Networks & Applications",
+    "/journals/monet/monet": "Mobile Networks AND Applications",
     "/journals/networks/networks": "Networks",
     "/journals/ppna/ppna": "Peer-to-Peer Networking and Applications",
     "/journals/wicomm/wicomm": "Wireless Communications & Mobile Computing",

@@ -29,7 +29,7 @@ scholar.appendRank = function () {
         // console.log(node);
         if (!node.next().hasClass("ccf-rank")) {
             let title = node.text();
-            console.log(title);
+            // console.log(title);
             let data = $(this)
                 .find("div.gs_a")
                 .text()
@@ -53,7 +53,7 @@ scholar.appendRank = function () {
                 jour_conf = jour_conf.split('\,')[0];
             }
             jour_conf = jour_conf.replace(/^\s+|\s+$/g, '');        // replace additional space
-            console.log(jour_conf);
+            // console.log(jour_conf);
             for (let getRankSpan of scholar.rankSpanList) {
                 if (jour_conf.includes('(')) {
                     jour_conf = jour_conf.substring(jour_conf.indexOf('(') + 1, jour_conf.indexOf(')'));
@@ -82,10 +82,10 @@ scholar.appendRanks = function () {
             let year = $(this).find("td.gsc_a_y").text();
             fetchRank(node, title, author, year, scholar);
 
-            let source = $(this)
-                .find("div.gs_gray")
-                .text()
-            console.log(source)
+            // let source = $(this)
+            //     .find("div.gs_gray")
+            //     .text()
+            // // console.log(source)
         }
     });
 };

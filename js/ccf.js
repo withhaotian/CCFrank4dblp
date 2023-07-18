@@ -36,28 +36,35 @@ ccf.getRankInfo = function (refine, type) {
         url = ccf.fullUrl[full];
         rank = ccf.rankUrl[url];
     } else if(type == 'blur') {
-        // console.log(refine);
         // blur search only for google scholar
-        let findArr = [];
-        // console.log(refine);
-        Object.keys(ccf.fullUrl).filter(function (k) {
-            // console.log(k);
+        // first for Precise Search
+        let tmp = ccf.fullUrl[refine.toUpperCase()];
+        if (tmp) {
+            // console.log(tmp);
+            rank = ccf.rankUrl[tmp];
+        } else{
+            // blue search
+            let findArr = [];
             // console.log(refine);
-            let res = k.indexOf(refine.toUpperCase());
-            // console.log(res);
-            if(res >= 0) {
-                // console.log(ccf.fullUrl[k]);
-                findArr.push(ccf.fullUrl[k]);
+            Object.keys(ccf.fullUrl).filter(function (k) {
+                // console.log(k);
+                // console.log(refine);
+                let res = k.indexOf(refine.toUpperCase());
+                // console.log(res);
+                if(res >= 0) {
+                    // console.log(ccf.fullUrl[k]);
+                    findArr.push(ccf.fullUrl[k]);
+                }
+            });
+            // console.log(findArr);
+            url = findArr[0];
+            if (findArr.length == 0 || findArr.length > 1) {
+                rank = undefined;
+            } else {
+                rank = ccf.rankUrl[url];
             }
-        });
-        // console.log(findArr);
-        url = findArr[0];
-        if (findArr.length == 0 || findArr.length > 1) {
-            rank = undefined;
-        } else {
-            rank = ccf.rankUrl[url];
+            // console.log(rank);
         }
-        // console.log(rank);
     } else {
         url = ccf.fullUrl[refine];
         rank = ccf.rankUrl[url];

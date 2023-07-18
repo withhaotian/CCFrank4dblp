@@ -110,6 +110,7 @@ ccf.fullUrl = {
     "IET COMMUNICATIONS": "/journals/iet-com/iet-com",
     "JOURNAL OF NETWORK AND COMPUTER APPLICATIONS": "/journals/jnca/jnca",
     "MOBILE NETWORKS & APPLICATIONS": "/journals/monet/monet",
+    "MOBILE NETWORKS AND APPLICATIONS": "/journals/monet/monet",
     "NETWORKS": "/journals/networks/networks",
     "PEER-TO-PEER NETWORKING AND APPLICATIONS": "/journals/ppna/ppna",
     "WIRELESS COMMUNICATIONS & MOBILE COMPUTING": "/journals/wicomm/wicomm",
